@@ -5,10 +5,17 @@ import {Link} from "react-router-dom";
 class NavBar extends Component {
   render() {
     return (
-      <div class="ui menu">
-        <div class="header item">Home</div>
-        <div class="item">Login</div>
-      </div>
+      <Menu>
+        <Menu.Item header as={Link} to="/">
+          Home
+        </Menu.Item>
+        <Menu.Item as={Link} to="/Login">
+          Login
+        </Menu.Item>
+        <Menu.Item as={Link} to="/Signup">
+          Signup
+        </Menu.Item>
+      </Menu>
     );
   }
 }

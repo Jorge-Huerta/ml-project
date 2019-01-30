@@ -1,12 +1,19 @@
 import React, {Component} from "react";
+import {Container, Grid} from "semantic-ui-react";
 import NavBar from "components/containers/NavBar";
+import LoginForm from "components/containers/LoginForm";
 
 class Login extends Component {
   render() {
     return (
-      <div>
+      <Container>
         <NavBar />
-      </div>
+        <Grid centered columns={1}>
+          <Grid.Row>
+            <LoginForm />
+          </Grid.Row>
+        </Grid>
+      </Container>
     );
   }
 }
