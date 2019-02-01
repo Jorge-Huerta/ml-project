@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import {Container, Grid} from "semantic-ui-react";
-import NavBar from "components/containers/NavBar";
+import HeaderComponent from "components/presentationals/HeaderComponent";
 
 class Home extends Component {
   render() {
     return (
       <Container>
-        <NavBar />
+        <HeaderComponent />
       </Container>
     );
   }
