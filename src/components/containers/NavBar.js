@@ -1,16 +1,19 @@
 import React, {Component} from "react";
-import {Header, Container, Menu} from "semantic-ui-react";
-import {Link} from "react-router-dom";
+import {Header, Container, Menu, Grid} from "semantic-ui-react";
+import {NavLink} from "react-router-dom";
 
 class NavBar extends Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       activeItem: ""
     };
   }
 
-  handleItemClick = (e, {name}) => this.setState({activeItem: name});
+  handleClick = (e, {name}) => {
+    this.setState({activeItem: name});
+  };
 
   render() {
     const {activeItem} = this.state;
@@ -21,8 +24,9 @@ class NavBar extends Component {
           <Menu.Item
             name="home"
             active={activeItem === "home"}
-            onClick={this.handleItemClick}
-            as={Link}
+            onClick={this.handleClick}
+            as={NavLink}
+            exact
             to="/"
           >
             Home
@@ -30,8 +34,8 @@ class NavBar extends Component {
           <Menu.Item
             name="login"
             active={activeItem === "login"}
-            onClick={this.handleItemClick}
-            as={Link}
+            onClick={this.handleClick}
+            as={NavLink}
             to="/Login"
           >
             Login
@@ -39,8 +43,8 @@ class NavBar extends Component {
           <Menu.Item
             name="signup"
             active={activeItem === "signup"}
-            onClick={this.handleItemClick}
-            as={Link}
+            onClick={this.handleClick}
+            as={NavLink}
             to="/Signup"
           >
             Signup
